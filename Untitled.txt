@@ -1,0 +1,29 @@
+# Create a bullet rect at (0,0) and then set correct position
+            
+        if direction == 3:
+            self.rect = pygame.Rect(0, 0, self.settings.bullet_width,
+                                self.settings.bullet_height)
+            self.rect.midbottom = ai_game.rocket.rect.midtop
+            self.dir_x = dir_x
+            self.dir_y = -1
+
+        elif direction == 4:
+            self.rect = pygame.Rect(0, 0, self.settings.bullet_width,
+                                self.settings.bullet_height)
+            self.rect.midtop = ai_game.rocket.rect.midbottom
+            self.dir_x = dir_x
+            self.dir_y = 1
+            
+        elif direction == 2:
+            self.rect = pygame.Rect(0, 0, self.settings.bullet_height,
+                                self.settings.bullet_width)
+            self.rect.midleft = ai_game.rocket.rect.midleft
+            self.dir_x = 1
+            self.dir_y = dir_y
+
+        elif direction == 1:
+            self.rect = pygame.Rect(0, 0, self.settings.bullet_height,
+                                self.settings.bullet_width)
+            self.rect.midright = ai_game.rocket.rect.midright
+            self.dir_x = -1
+            self.dir_y = dir_y
